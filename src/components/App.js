@@ -4,6 +4,11 @@ import '../styles/App.css';
 
 
 //import components and containers
+import BaseLayout from './BaseLayout.js';
+import AccountDetail from '../containers/AccountDetail.js';
+import Transaction from '../containers/Transaction.js';
+import UserDetail from '../containers/UserDetail.js';
+import UserList from '../containers/UserList.js';
 
 
 class App extends Component {

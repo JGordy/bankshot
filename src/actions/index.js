@@ -17,6 +17,13 @@ payload: accountId
 
 ************************************/
 
+export function selectAccount(accountId) {
+  return {
+    type: ACCOUNT_SELECTED,
+    payload: accountId
+  }
+}
+
 export function withdrawFunds(amount) {
   return {
     type: WITHDRAW_FUNDS,
