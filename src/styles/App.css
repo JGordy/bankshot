@@ -10,3 +10,8 @@
 .navbar {
   background-color: aliceblue;
 }
+
+.AccountDetail .btn {
+  margin-left: 20px;
+  width: 40%;
+}
