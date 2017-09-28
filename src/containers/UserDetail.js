@@ -11,7 +11,8 @@ import { Link } from 'react-router-dom';
 class UserDetail extends Component {
 
   render() {
-    if(!this.props.user) {
+    console.log("UserDetail this.props:", this.props);
+    if(!this.props) {
       return (
         <div>Please select a user...</div>
       )
@@ -56,23 +57,20 @@ class UserDetail extends Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    user: state.selectedUser,
-    account: state.selectedAccount
-  };
+  let user = state.users.filter(singleUser => singleUser._id === state.selectedUser )
+  return {user: user[0]};
 }
 
 
 /*
-
 You will need to create a mapDispatchToProps function here and
-return the action creator selectAccount - HINT: see the UserList
-component.
-
+return the action creator selectAccount - HINT: see the UserList component.
 */
+
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        selectAccount: selectAccount
+        selectAccount: selectAccount,
+        selectUser: selectUser
     }, dispatch)
 }
 
