@@ -9,9 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 class UserDetail extends Component {
-
   render() {
-    console.log("UserDetail this.props:", this.props);
     if(!this.props) {
       return (
         <div>Please select a user...</div>
