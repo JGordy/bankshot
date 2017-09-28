@@ -5,7 +5,7 @@ export default class BaseLayout extends Component {
   render() {
     return (
       <div className='BaseLayout'>
-        <nav className="navbar">
+        <nav className="nav">
           <NavLink activeClassName="selected" exact to='/'>Bankshot
           </NavLink>
           <NavLink activeClassName="selected" exact to='/'>Home

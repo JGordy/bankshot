@@ -6,7 +6,7 @@ import {withdrawFunds} from '../actions/index';
 
 
 class Transaction extends Component {
-
+  console.log(this.props);
   render() {
     return (
       <div className="Transaction">

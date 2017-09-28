@@ -48,7 +48,6 @@ class UserDetail extends Component {
           <Link className="btn btn-primary" to="/users" >Back to List of Users</Link>
         </div>
 
-
       </div>
     );
   }

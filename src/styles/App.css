@@ -7,11 +7,35 @@
   width: 80%;
 }
 
-.navbar {
+.nav {
   background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
 
-.AccountDetail .btn {
-  margin-left: 20px;
-  width: 40%;
+.nav a {
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.nav a:first-child {
+  color: black;
+  font-size: 24px;
+}
+
+.AccountDetail .btn-primary, .AccountDetail .btn-success, .AccountDetail .btn-info {
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+.AccountDetail .back_users {
+  cursor: pointer;
+  margin-left: 22px;
+  flex-basis: 50%;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
 }
