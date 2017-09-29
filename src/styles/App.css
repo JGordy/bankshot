@@ -55,9 +55,5 @@
 }
 
 .accountType {
-
-}
-
-.balance {
-  color:
+  text-transform: uppercase;
 }
