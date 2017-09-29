@@ -7,25 +7,22 @@ import {withdrawFunds, selectUser, selectAccount} from '../actions/index';
 
 
 class Transaction extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       modal: false
     }
-      // console.log("Transaction Component this.props",this.props);
   }
 
   render() {
-    console.log("Transaction render: this.props",this.props.props.account.accountType);
     return (
       <div className="Transaction">
-        <h1 className="modal_header">Make a Withdrawal</h1>
-        <p>Please select an amount to withdraw from your {this.props.props.account.accountType} account. Your current balance is: {this.props.props.account.balance}</p>
-        <span className="btn btn-primary" onClick={() => this.props.withdrawFunds(5)}>$5</span>
-        <span className="btn btn-success" onClick={() => this.props.withdrawFunds(10)}>$10</span>
-        <span className="btn btn-info" onClick={() => this.props.withdrawFunds(20)}>$20</span>
-        <button className="btn btn-danger" onClick={this.props.toggle}>Cancel</button>
+          <h1 className="modal_header">Make a Withdrawal</h1>
+          <p>Please select an amount to withdraw from your {this.props.account.accountType} account.<br/> Your current balance is: {this.props.account.balance}</p>
+          <span className="btn btn-primary" onClick={() => this.props.withdrawFunds(5)}>$5</span>
+          <span className="btn btn-success" onClick={() => this.props.withdrawFunds(10)}>$10</span>
+          <span className="btn btn-info" onClick={() => this.props.withdrawFunds(20)}>$20</span>
+          <button className="btn btn-danger" onClick={this.props.toggle}>Cancel</button>
       </div>
     );
   }

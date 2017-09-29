@@ -17,6 +17,6 @@ export default class BaseLayout extends Component {
           {this.props.children}
         </div>
       </div>
-    )
+    );
   }
-}
+};

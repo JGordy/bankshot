@@ -28,7 +28,6 @@ class UserDetail extends Component {
             onClick={() => this.props.selectAccount(account)}
             to={`/users/${id}/${account.id}`}>{account.accountType}</Link>
         </div>
-
       )
     })
     return (
@@ -41,13 +40,11 @@ class UserDetail extends Component {
               <div>{this.props.user.email}</div>
               <div>{this.props.user.phone}</div>
               <div>{this.props.user.address}</div>
-
             </div>
             {accounts}
           </div>
           <Link className="btn btn-primary" to="/users" >Back to List of Users</Link>
         </div>
-
       </div>
     );
   }
@@ -57,12 +54,6 @@ function mapStateToProps(state) {
   let user = state.users.filter(singleUser => singleUser._id === state.selectedUser )
   return {user: user[0]};
 }
-
-
-/*
-You will need to create a mapDispatchToProps function here and
-return the action creator selectAccount - HINT: see the UserList component.
-*/
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({

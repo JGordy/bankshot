@@ -8,12 +8,22 @@ import Transaction from './Transaction';
 import Modal from 'react-modal';
 
 const customStyles = {
+  overlay: {
+    position          : 'fixed',
+    top               : 0,
+    left              : 0,
+    right             : 0,
+    bottom            : 0,
+    backgroundColor   : 'rgba(0, 0, 0, 0.3)'
+  },
+  content: {
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
+    transform             : 'translate(-50%, -50%)'
+  }
 };
 
 class AccountDetail extends Component {
@@ -48,7 +58,6 @@ class AccountDetail extends Component {
 
   render() {
     let n = 1;
-    console.log("AD render: this.state", this.state.newProps);
     return (
       <div className="AccountDetail col-md-6">
         <div className= "card">
@@ -60,23 +69,22 @@ class AccountDetail extends Component {
             </div>
           </div>
           <div className="btn-container">
-            {/*<Button color="danger" onClick={this.toggle}>Withdraw Funds</Button>*/}
+            <button className="btn btn-danger" onClick={this.toggle}>Withdraw Funds</button>
             <Link className="btn btn-primary back_users" to="/users/:id">Back to User Details</Link>
           </div>
         </div>
 
-        {/* next line is for the modal*/}
+        {/* next lines are for the modal*/}
 
-        <button className="btn btn-danger" onClick={this.toggle}>Withdraw Funds Modal</button>
         <Modal
           isOpen={this.state.isModalOpen}
           onRequestClose={this.closeModal}
           closeTimeoutMS={n}
-          shouldCloseOnOverlayClick={false}
-          style={customStyles}
+          shouldCloseOnOverlayClick={true}
+            style={customStyles}
           contentLabel="Example Modal">
           <div className="modal_background">
-            <Transaction props={this.props} toggle={this.toggle}/>
+            <Transaction account={this.props.account} toggle={this.toggle}/>
           </div>
         </Modal>
 

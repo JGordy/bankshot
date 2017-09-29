@@ -24,20 +24,26 @@
   font-size: 24px;
 }
 
-.AccountDetail .btn-primary, .AccountDetail .btn-success, .AccountDetail .btn-info {
+.Transaction .btn-primary, .Transaction .btn-success, .Transaction .btn-info, .Transaction .btn-danger{
   cursor: pointer;
-  flex-basis: 15%;
+  margin-left: 5px;
 }
 
 .AccountDetail .back_users {
   cursor: pointer;
-  margin-left: 5px;
   flex-basis: 50%;
 }
 
 .btn-container {
   display: flex;
   justify-content: space-between;
-  /*margin: 3px auto;*/
-  /*width: 90%;*/
+}
+
+.AccountDetail .btn {
+  flex-basis: 50%;
+  border-radius: 0px;
+}
+
+.Transaction {
+  /*background-color: rgba(255, 255, 255, 0.3);*/
 }

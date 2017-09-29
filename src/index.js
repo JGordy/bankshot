@@ -1,22 +1,12 @@
-//react imports
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-//router imports
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
-//redux imports
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
-
-//import styles
 import './styles/index.css';
-// import 'bootstrap/dist/css/bootstrap.css';
-
 //component imports
 import App from './components/App';
-//BaseLayout imported...Here
 import Transaction from './containers/Transaction';
 import BaseLayout from './components/BaseLayout'
 import UserList from './containers/UserList';
