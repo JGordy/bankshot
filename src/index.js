@@ -17,6 +17,7 @@ import './styles/index.css';
 //component imports
 import App from './components/App';
 //BaseLayout imported...Here
+import Transaction from './containers/Transaction';
 import BaseLayout from './components/BaseLayout'
 import UserList from './containers/UserList';
 import UserDetail from './containers/UserDetail';

@@ -26,16 +26,18 @@
 
 .AccountDetail .btn-primary, .AccountDetail .btn-success, .AccountDetail .btn-info {
   cursor: pointer;
-  margin-left: 3px;
+  flex-basis: 15%;
 }
 
 .AccountDetail .back_users {
   cursor: pointer;
-  margin-left: 22px;
+  margin-left: 5px;
   flex-basis: 50%;
 }
 
 .btn-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  /*margin: 3px auto;*/
+  /*width: 90%;*/
 }

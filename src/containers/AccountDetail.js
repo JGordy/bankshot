@@ -3,25 +3,52 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 import {withdrawFunds} from '../actions/index';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import Transaction from './Transaction';
+// import {Button} from 'reactstrap';
+import Modal from 'react-modal';
+
+const customStyles = {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+};
 
 class AccountDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      isModalOpen: false,
+      newProps: {}
     }
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.toggle = this.toggle.bind(this);
-    console.log(this.props);
   }
 
   toggle() {
    this.setState({
-     modal: !this.state.modal
+     isModalOpen: !this.state.isModalOpen
    });
+  }
+
+  openModal(){
+   this.setState({isModalOpen: true})
  }
 
+ closeModal(){
+   this.setState({isModalOpen: false})
+ }
+
+  componentDidMount() {
+    this.setState( {newProps: this.props})
+  }
+
   render() {
+    let n = 1;
+    console.log("AD render: this.state", this.state.newProps);
     return (
       <div className="AccountDetail col-md-6">
         <div className= "card">
@@ -34,31 +61,29 @@ class AccountDetail extends Component {
           </div>
           <div className="btn-container">
             {/*<Button color="danger" onClick={this.toggle}>Withdraw Funds</Button>*/}
-            <span className="btn btn-primary" onClick={() => this.props.withdrawFunds(5)}>$5</span>
-            <span className="btn btn-success" onClick={() => this.props.withdrawFunds(10)}>$10</span>
-            <span className="btn btn-info" onClick={() => this.props.withdrawFunds(20)}>$20</span>
             <Link className="btn btn-primary back_users" to="/users/:id">Back to User Details</Link>
           </div>
         </div>
-        {/*<Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Make a Withdrawal</ModalHeader>
-          <ModalBody>
-            Please select an amount to withdraw from your {this.props.account.accountType} account. Your current balance is: {this.props.account.balance}
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={(event) => {this.toggle; this.props.withdrawFunds(5)}} >$5</Button>{' '}
-            <Button color="success" onClick={(event) => {this.toggle; this.props.withdrawFunds(10)}}>$10</Button>
-            <Button color="warning" onClick={(event) => {this.toggle; this.props.withdrawFunds(20)}}>$20</Button>
-            <Button color="danger" onClick={this.toggle}>Cancel</Button>
-          </ModalFooter>
-        </Modal>*/}
+
+        {/* next line is for the modal*/}
+
+        <button className="btn btn-danger" onClick={this.toggle}>Withdraw Funds Modal</button>
+        <Modal
+          isOpen={this.state.isModalOpen}
+          onRequestClose={this.closeModal}
+          closeTimeoutMS={n}
+          shouldCloseOnOverlayClick={false}
+          style={customStyles}
+          contentLabel="Example Modal">
+          <div className="modal_background">
+            <Transaction props={this.props} toggle={this.toggle}/>
+          </div>
+        </Modal>
+
       </div>
     );
   }
 }
-
-// AccountDetail should have access to the user that was selected and their account information. You will need to mapStateToProps as you did in the UserDetail container component.
-// the state should reflect the reducers selectedUser and selectedAccount.
 
 function mapStateToProps(state) {
   const userIdx = state.users.findIndex(user => user._id === state.selectedUser);
@@ -69,8 +94,6 @@ function mapStateToProps(state) {
   };
 }
 
-
-
 function mapDispatchToProps(dispatch) {
     return {
         withdrawFunds: fund => {
@@ -78,9 +101,5 @@ function mapDispatchToProps(dispatch) {
         }
     }
 }
-
-
-
-// You will need to connect you mapStateToProps to the AccountDetail component and export it.
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountDetail);
