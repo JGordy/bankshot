@@ -24,7 +24,7 @@
   font-size: 24px;
 }
 
-.Transaction .btn-primary, .Transaction .btn-success, .Transaction .btn-info, .Transaction .btn-danger{
+.Transaction .btn-outline-primary, .Transaction .btn-outline-success, .Transaction .btn-outline-info, .Transaction .btn-danger{
   cursor: pointer;
   margin-left: 5px;
 }
@@ -44,6 +44,20 @@
   border-radius: 0px;
 }
 
-.Transaction {
-  /*background-color: rgba(255, 255, 255, 0.3);*/
+.modal_header {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+}
+
+.Transaction p {
+  border-bottom: 1px solid lightgray;
+  padding: 15px 0px 20px 0px;
+}
+
+.accountType {
+
+}
+
+.balance {
+  color:
 }

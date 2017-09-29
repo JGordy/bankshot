@@ -18,10 +18,11 @@ class Transaction extends Component {
     return (
       <div className="Transaction">
           <h1 className="modal_header">Make a Withdrawal</h1>
-          <p>Please select an amount to withdraw from your {this.props.account.accountType} account.<br/> Your current balance is: {this.props.account.balance}</p>
-          <span className="btn btn-primary" onClick={() => this.props.withdrawFunds(5)}>$5</span>
-          <span className="btn btn-success" onClick={() => this.props.withdrawFunds(10)}>$10</span>
-          <span className="btn btn-info" onClick={() => this.props.withdrawFunds(20)}>$20</span>
+          <p>Please select an amount to withdraw from your <span className="accountType text-primary">{this.props.account.accountType}
+          </span> account.<br/> Your current balance is: <span className="balance text-success">{this.props.account.balance}</span></p>
+          <span className="btn btn-outline-primary" onClick={() => this.props.withdrawFunds(5)}>$5</span>
+          <span className="btn btn-outline-success" onClick={() => this.props.withdrawFunds(10)}>$10</span>
+          <span className="btn btn-outline-info" onClick={() => this.props.withdrawFunds(20)}>$20</span>
           <button className="btn btn-danger" onClick={this.props.toggle}>Cancel</button>
       </div>
     );
