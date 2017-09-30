@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+// import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 import {withdrawFunds} from '../actions/index';
 import Transaction from './Transaction';
@@ -71,7 +71,7 @@ class AccountDetail extends Component {
           </div>
           <div className="btn-container">
             <button className="btn btn-danger" onClick={this.toggle}>Withdraw Funds</button>
-            <Link className="btn btn-primary back_users" to="/users/:id">Back to User Details</Link>
+            <Link className="btn btn-primary back_users" to="/bankshot/users/:id">Back to User Details</Link>
           </div>
         </div>
 

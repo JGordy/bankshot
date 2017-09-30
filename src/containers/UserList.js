@@ -9,7 +9,7 @@ class UserList extends Component {
         let users = this.props.users.map((user) => {
             return (
                 <li key={user._id} className="list-group-item" onClick={() => this.props.selectUser(user._id)}>
-                  <Link to={`/users/${user._id}`}>{user.name}</Link>
+                  <Link to={`/bankshot/users/${user._id}`}>{user.name}</Link>
                 </li>
             );
         });

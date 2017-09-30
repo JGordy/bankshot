@@ -7,7 +7,7 @@ import reducers from './reducers';
 import './styles/index.css';
 //component imports
 import App from './components/App';
-import Transaction from './containers/Transaction';
+// import Transaction from './containers/Transaction';
 import BaseLayout from './components/BaseLayout'
 import UserList from './containers/UserList';
 import UserDetail from './containers/UserDetail';
@@ -22,10 +22,10 @@ ReactDOM.render(
     <BrowserRouter>
       <BaseLayout>
         <Switch>
-          <Route exact path="/" component={App} />
-          <Route path="/users/:id/:accountID" component={AccountDetail} />
-          <Route path="/users/:id" component={UserDetail} />
-          <Route path="/users" component={UserList} />
+          <Route exact path="/bankshot/" component={App} />
+          <Route path="/bankshot/users/:id/:accountID" component={AccountDetail} />
+          <Route path="/bankshot/users/:id" component={UserDetail} />
+          <Route path="/bankshot/users" component={UserList} />
         </Switch>
       </BaseLayout>
     </BrowserRouter>

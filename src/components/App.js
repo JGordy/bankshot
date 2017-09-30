@@ -13,7 +13,7 @@ export default class App extends Component {
             <hr className= "my-4"/>
             <p>Quick, fast, and sometimes accurate account results.</p>
             <p className= "lead">
-              <Link className= "btn btn-primary btn-lg" to="/users" role="button">Check Users</Link>
+              <Link className= "btn btn-primary btn-lg" to="/bankshot/users" role="button">Check Users</Link>
               </p>
             </div>
         </div>

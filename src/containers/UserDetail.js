@@ -26,7 +26,7 @@ class UserDetail extends Component {
         <div key={account.id}>
           <Link
             onClick={() => this.props.selectAccount(account)}
-            to={`/users/${id}/${account.id}`}>{account.accountType}</Link>
+            to={`/bankshot/users/${id}/${account.id}`}>{account.accountType}</Link>
         </div>
       )
     })
@@ -43,7 +43,7 @@ class UserDetail extends Component {
             </div>
             {accounts}
           </div>
-          <Link className="btn btn-primary" to="/users" >Back to List of Users</Link>
+          <Link className="btn btn-primary" to="/bankshot/users" >Back to List of Users</Link>
         </div>
       </div>
     );

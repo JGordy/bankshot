@@ -6,11 +6,11 @@ export default class BaseLayout extends Component {
     return (
       <div className='BaseLayout'>
         <nav className="nav">
-          <NavLink activeClassName="selected" exact to='/'>Bankshot
+          <NavLink activeClassName="selected" exact to='/bankshot/'>Bankshot
           </NavLink>
-          <NavLink activeClassName="selected" exact to='/'>Home
+          <NavLink activeClassName="selected" exact to='/bankshot/'>Home
           </NavLink>
-          <NavLink activeClassName="selected" to='/users'>Users
+          <NavLink activeClassName="selected" to='/bankshot/users'>Users
           </NavLink>
         </nav>
         <div className="">
